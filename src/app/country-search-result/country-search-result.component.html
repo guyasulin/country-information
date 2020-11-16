@@ -1,0 +1,40 @@
+<div class="country-search-result">
+    <div class="country-item">
+        <div class="card-image">
+            <img class="flag" src="{{country?.flag}}" alt="flag">
+        </div>
+        <div class="country-content">
+            <h1>{{country?.name}}</h1>
+
+            <div>
+                <mat-label>Capital City: </mat-label>
+                {{country?.capital}}
+            </div>
+            
+            <div>
+                <mat-label>Languages: </mat-label>
+                {{ country?.languages }}
+            </div>
+            
+          <div>
+              <mat-label>Currencies: </mat-label>
+              {{ country?.currencies }}
+            </div>
+            
+          <div>
+              <mat-label>Timezones: </mat-label>
+              {{ country?.timezones }}
+            </div>
+            
+            <div>
+                <mat-label>Borders Countries: </mat-label>
+                {{ country?.borders }}
+            </div>
+
+            <div>
+                <mat-label>Population: </mat-label>
+                {{ country?.population }}
+            </div>
+        </div>
+    </div>
+</div>

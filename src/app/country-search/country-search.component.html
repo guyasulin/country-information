@@ -1,0 +1,19 @@
+<div class="country-search">
+      <form class="form">
+        <mat-form-field  appearance="fill" class="full-with">
+          <input type="text"
+                 placeholder="Pick one"
+                 matInput
+                 [formControl]="myControl"
+                 [matAutocomplete]="auto">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let country of filteredCountries | async" [value]="country.name" (click)="optionSelected(country)">
+              {{country.name}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+      <div *ngIf="countrySelected">
+        <app-country-search-result [country]="countrySelected" ></app-country-search-result>
+      </div>
+</div>
