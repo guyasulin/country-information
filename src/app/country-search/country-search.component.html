@@ -2,12 +2,13 @@
       <form class="form">
         <mat-form-field  appearance="fill" class="full-with">
           <input type="text"
-                 placeholder="Pick one"
+                 placeholder="Search country"
                  matInput
                  [formControl]="myControl"
                  [matAutocomplete]="auto">
           <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayFn">
             <mat-option *ngFor="let country of filteredCountries | async" [value]="country.name" (click)="optionSelected(country)">
+              <img class="example-option-img" aria-hidden [src]="country.flag" height="25">
               {{country.name}}
             </mat-option>
           </mat-autocomplete>

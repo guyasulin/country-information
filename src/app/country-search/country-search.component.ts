@@ -46,8 +46,5 @@ export class CountrySearchComponent implements OnInit {
 
   optionSelected(country: Country) {
     this.countrySelected = new Country(country);
-    console.log(  this.countrySelected);
-    console.log(this.route);
-    
   }
 }

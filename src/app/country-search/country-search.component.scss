@@ -6,10 +6,23 @@
     max-width: 500px;
     width: 100%;
     margin: auto;
-    
+
     .full-with {
         width: 100%;
     }
    }
+}
 
+::ng-deep {
+  .example-option-img {
+    vertical-align: middle;
+    margin-right: 8px;
+    width: 45px;
+  }
+  
+  [dir='rtl'] .example-option-img {
+    margin-right: 0;
+    margin-left: 8px;
+    width: 45px;
+  }
 }

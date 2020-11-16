@@ -12,7 +12,7 @@ export class Country {
 		this.name = country.name;
 		this.capital = country.capital;
 		this.languages = country.languages.map(x => x.name);
-		this.currencies = country.currencies.map(x => x.code);
+		this.currencies = country.currencies.map(x => x.name);
 		this.timezones = country.timezones;
 		this.borders = country.borders;
 		this.flag = country.flag;
@@ -24,5 +24,5 @@ class Languages {
 	name:any;
 }
 class Currencies {
-	code:any;
+	name:any;
 }

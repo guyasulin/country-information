@@ -8,8 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CountrySearchComponent } from './country-search/country-search.component';
 import { CountrySearchResultComponent } from './country-search-result/country-search-result.component';
 
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import {MatSelectModule} from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 
@@ -27,7 +25,6 @@ import { AngularMaterialModule } from './angular-material/angular-material.modul
     FormsModule,
     ReactiveFormsModule,
     AngularMaterialModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]
