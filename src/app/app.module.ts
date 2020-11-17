@@ -10,6 +10,7 @@ import { CountrySearchResultComponent } from './country-search-result/country-se
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,9 @@ import { AngularMaterialModule } from './angular-material/angular-material.modul
     FormsModule,
     ReactiveFormsModule,
     AngularMaterialModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBc9qXp0eClbw1FugcjmjAPLeSClaXBRYg'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

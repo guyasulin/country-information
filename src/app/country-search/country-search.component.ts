@@ -1,28 +1,27 @@
 import { CountryService } from './../services/country.service';
 import { Country } from '../models/country';
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-country-search',
   templateUrl: './country-search.component.html',
   styleUrls: ['./country-search.component.scss']
 })
-export class CountrySearchComponent implements OnInit {
+export class CountrySearchComponent implements OnInit, OnDestroy {
   
   public myControl = new FormControl();
   public countries : Country[];
   public countrySelected: Country = null;
   public filteredCountries: Observable<Country[]>;
-  
-  constructor(private countryService: CountryService,private route: ActivatedRoute) { }
+  public sub: Subscription
+
+  constructor(private countryService: CountryService) { }
 
   ngOnInit(): void {
-     this.countryService.getCountries().subscribe(res => {
+     this.sub = this.countryService.getCountries().subscribe(res => {
       this.countries = res;
      })
 
@@ -46,5 +45,9 @@ export class CountrySearchComponent implements OnInit {
 
   optionSelected(country: Country) {
     this.countrySelected = new Country(country);
+  }
+
+  ngOnDestroy(): void {
+      this.sub.unsubscribe()
   }
 }

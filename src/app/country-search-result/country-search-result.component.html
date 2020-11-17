@@ -3,6 +3,7 @@
         <div class="card-image">
             <img class="flag" src="{{country?.flag}}" alt="flag">
         </div>
+
         <div class="country-content">
             <h1 class="title">{{country?.name}}</h1>
 
@@ -36,5 +37,11 @@
                 {{ country?.population | number}}
             </div>
         </div>
+    </div>
+    
+    <div class="agmMap">
+        <agm-map [latitude]="lat" [longitude]="lng">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
     </div>
 </div>

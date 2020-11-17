@@ -4,6 +4,7 @@ export class Country {
 	languages?: Languages[];
 	currencies?: Currencies[];
 	timezones?: string[];
+	latlng?: any[];
 	borders?: string;
 	flag?: string;
 	population?:string;
@@ -17,6 +18,7 @@ export class Country {
 		this.borders = country.borders;
 		this.flag = country.flag;
 		this.population = country.population;
+		this.latlng = country.latlng;
 	}
 }
 

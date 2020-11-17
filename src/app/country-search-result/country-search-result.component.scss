@@ -2,35 +2,44 @@
   min-width: 50%;
   max-width: 500px;
   border: 1px solid;
-  padding:16px;
+  padding: 16px;
   display: flex;
   width: 65%;
   margin: auto;
   margin-bottom: 8px;
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
   color: #a9afba;
-  background: hsla(0,0%,100%,.1);
+  background: hsla(0, 0%, 100%, .1);
 
   .country-item {
-      flex: 1;
+    flex: 1;
 
-      .card-image {
-          display: inline-block;
-          vertical-align: top;
-          margin-right: 10px;
+    .card-image {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 10px;
 
-          .flag {
-            width: 200px;
-          }
+      .flag {
+        width: 200px;
       }
+    }
 
-      .country-content {
-          display: inline-block;
+    .country-content {
+      display: inline-block;
 
-          .title {
-            color: white;
-          }
+      .title {
+        color: white;
       }
+    }
+  }
+
+  .agmMap {
+    display: contents;
+
+    agm-map {
+      height: 317px;
+      width: -webkit-fill-available;
+    }
   }
 
 }

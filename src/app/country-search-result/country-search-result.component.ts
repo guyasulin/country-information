@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, Component, Input, OnInit } from '@angular/core';
 import { Country } from '../models/country';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
@@ -26,11 +26,19 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
 		])
 	]
 })
-export class CountrySearchResultComponent implements OnInit {
+export class CountrySearchResultComponent implements OnInit, AfterContentChecked {
 	@Input() country: Country;
 	public state: string;
+	 public lat: number;
+	 public lng: number;
 
 	constructor() {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+	}
+
+	ngAfterContentChecked() {
+		this.lat = this.country.latlng[0] 
+		this.lng = this.country.latlng[1] 
+	}
 }
