@@ -1,14 +1,14 @@
-<div class="country-search-result">
+<div class="country-search-result" [@openItemAnimation]="state">
     <div class="country-item">
         <div class="card-image">
             <img class="flag" src="{{country?.flag}}" alt="flag">
         </div>
         <div class="country-content">
-            <h1>{{country?.name}}</h1>
+            <h1 class="title">{{country?.name}}</h1>
 
             <div>
                 <mat-label>Capital City: </mat-label>
-                {{country?.capital}}
+               <span>{{country?.capital}}</span> 
             </div>
             
             <div>
